@@ -437,6 +437,10 @@ func (h *FileHeader) writeWinZipExtra() {
 	h.Extra = append(h.Extra, buf[:]...)
 }
 
+func (h *FileHeader) SetEncryptionMethod(enc EncryptionMethod) {
+	h.setEncryptionMethod(enc)
+}
+
 func (h *FileHeader) setEncryptionMethod(enc EncryptionMethod) {
 	h.encryption = enc
 	switch enc {
